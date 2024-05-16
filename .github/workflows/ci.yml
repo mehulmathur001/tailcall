@@ -144,6 +144,10 @@ jobs:
 
           - build: win32-arm64-msvc
             os: windows-latest
+            rust: stable
+            target: aarch64-pc-windows-msvc
+            libc: msvc
+            ext: ".exe"
 
           - build: win32-ia32-gnu
             os: ubuntu-latest
