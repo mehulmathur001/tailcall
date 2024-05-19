@@ -20,5 +20,5 @@ jobs:
       - name: Load matrix configuration
         id: load_matrix
         run: |
-          matrix=$(jq -c .config .github/workflows/build-matrix.json)
-          echo "matrix=$matrix" >> $GITHUB_ENV
+          echo "matrix=$(jq -c .config .github/workflows/build-matrix.json)" >> $GITHUB_OUTPUT
+

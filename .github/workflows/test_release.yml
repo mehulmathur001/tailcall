@@ -9,7 +9,7 @@ jobs:
     uses: ./.github/workflows/setup-build-matrix.yml
 
   test_release:
-    # if: "${{ contains(github.event.pull_request.labels.*.name, 'ci: test release') }}"
+    if: "${{ contains(github.event.pull_request.labels.*.name, 'ci: test release') }}"
     needs: setup_matrix
     name: Test Release Build
     runs-on: ${{ matrix.os }}
