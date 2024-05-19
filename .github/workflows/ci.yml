@@ -312,26 +312,28 @@
 #             libc: glibc
 #             ext: ".exe"
 
-#           - build: win32-arm64-msvc
-#             os: windows-latest
-#             rust: stable
-#             target: aarch64-pc-windows-msvc
-#             libc: msvc
-#             ext: ".exe"
+    #       - build: win32-arm64-msvc
+    #         os: windows-latest
+    #         rust: stable
+    #         target: aarch64-pc-windows-msvc
+    #         features: --no-default-features --features cli
+    #         libc: msvc
+    #         ext: ".exe"
 
-#           - build: win32-ia32-gnu
-#             os: ubuntu-latest
-#             rust: stable
-#             target: i686-pc-windows-gnu
-#             cross: true
-#             libc: glibc
-#             ext: ".exe"
-#     permissions:
-#       contents: write
-#       pull-requests: write
-#     env:
-#       GITHUB_TOKEN: ${{secrets.GITHUBTOKEN}}
-#       APP_VERSION: ${{ needs.draft_release.outputs.create_release_name }}
+    #       - build: win32-ia32-gnu
+    #         os: ubuntu-latest
+    #         rust: stable
+    #         target: i686-pc-windows-gnu
+    #         features: --no-default-features --features cli
+    #         cross: true
+    #         libc: glibc
+    #         ext: ".exe"
+    # permissions:
+    #   contents: write
+    #   pull-requests: write
+    # env:
+    #   GITHUB_TOKEN: ${{secrets.GITHUBTOKEN}}
+    #   APP_VERSION: ${{ needs.draft_release.outputs.create_release_name }}
 
 #     steps:
 #       - name: Checkout Current Branch (Fast)
