@@ -2,7 +2,7 @@ name: Test Release
 
 on:
   pull_request:
-    types: [opened, reopened, labeled]
+    types: [opened, reopened, labeled, synchronize]
 
 jobs:
   setup_matrix:
