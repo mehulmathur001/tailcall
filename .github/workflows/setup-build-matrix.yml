@@ -1,0 +1,30 @@
+name: Setup Build Matrix
+
+on:
+  workflow_call:
+    outputs:
+      matrix:
+        description: "Build Matrix Configuration"
+        value: ${{ steps.export_matrix.outputs.matrix }}
+
+jobs:
+  setup_matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.export_matrix.outputs.matrix }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Load matrix configuration
+        id: load_matrix
+        run: |
+          matrix=$(cat .github/workflows/build-matrix.json)
+          echo "matrix=$matrix" >> $GITHUB_ENV
+
+      - name: Export matrix
+        id: export_matrix
+        run: echo ${{ env.matrix }}
+        env:
+          matrix: ${{ env.matrix }}
