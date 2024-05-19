@@ -22,3 +22,6 @@ jobs:
         run: |
           echo "matrix=$(jq -c .config .github/workflows/build-matrix.json)" >> $GITHUB_OUTPUT
 
+      - name: Log matrix output
+        run: |
+          echo "Matrix output: ${{ steps.load_matrix.outputs }}"
