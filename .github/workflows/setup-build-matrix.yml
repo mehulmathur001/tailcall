@@ -5,7 +5,7 @@ on:
     outputs:
       matrix:
         description: "Build Matrix Configuration"
-        value: ${{ steps.export_matrix.outputs.matrix }}
+        value: ${{ jobs.setup_matrix.outputs.matrix }}
 
 jobs:
   setup_matrix:
