@@ -22,9 +22,3 @@ jobs:
         run: |
           matrix=$(jq -c .config .github/workflows/build-matrix.json)
           echo "matrix=$matrix" >> $GITHUB_ENV
-
-      - name: Export matrix
-        id: export_matrix
-        run: echo ${{ env.matrix }}
-        env:
-          matrix: ${{ env.matrix }}
