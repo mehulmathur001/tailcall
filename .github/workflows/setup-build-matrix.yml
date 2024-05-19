@@ -24,5 +24,5 @@ jobs:
 
       - name: Log matrix output
         run: |
-          echo "Matrix output: ${{ steps.load_matrix.outputs.matrix[0].build }}"
-          echo "Matrix output: ${{ steps.load_matrix.outputs.matrix }}"
+          echo "Matrix output: ${{ fromJSON(steps.load_matrix.outputs.matrix)[0] }}"
+          echo "Matrix JSON output: ${{ steps.load_matrix.outputs.matrix }}"

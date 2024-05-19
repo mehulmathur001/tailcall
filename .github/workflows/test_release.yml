@@ -15,7 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
-      matrix: ${{ fromJSON(needs.setup_matrix.outputs.matrix).config }}
+      matrix: ${{ fromJSON(needs.setup_matrix.outputs.matrix) }}
     steps:
       - name: Checkout Current Branch (Fast)
         uses: actions/checkout@v4
